@@ -1,0 +1,123 @@
+/* stylesheet2.css */
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  min-height: 100vh;
+
+  /* ✅ Fondo como tu imagen */
+  background-color: #E3E4DB; /* por si tarda en cargar la imagen */
+  background-image: url("IMGS/Door.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;   
+}
+
+/* Contenedor para ubicar la burbuja encima */
+.stage{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.enter-button{
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
+.enter-button{
+    width:120px;
+    position:absolute;
+    bottom:60px;
+    left:50%;
+    transform:translateX(-50%);
+    cursor:pointer;
+}
+
+/* efecto bonito al pasar el mouse */
+.enter-button img:hover{
+  transform: scale(1.08);
+}
+
+/* ✅ Burbuja turquesa */
+.bubble{
+  position: absolute;
+  top: 18%;
+  right: 6%;
+  width: min(60vw, 720px);
+  background: #39E7DA;
+  border-radius: 40px;
+  padding: clamp(18px, 3vw, 40px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.18);
+}
+
+/* Texto dentro */
+.bubble__text{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+  align-items: start;
+}
+
+/* Columna izquierda (gótico) */
+.gothic{
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 40px);
+  font-weight: 700;
+  color: #22313a;
+  line-height: 1.05;
+
+  /* Usa una fuente tipo gótica si la tienes instalada; si no, cae a serif */
+  font-family: "Old English Text MT", "UnifrakturMaguntia", Georgia, serif;
+}
+
+/* Columna derecha (script Alexis) */
+.script{
+  margin: 0;
+  font-size: clamp(36px, 4.2vw, 70px);
+  font-weight: 500;
+  color: #22313a;
+  line-height: 1;
+
+  font-family: "Brush Script MT", "Snell Roundhand", "Apple Chancery", cursive;
+  justify-self: end;
+}
+
+/* Ajuste: que "Hola! soy" y "Alexis" queden en la primera fila */
+.bubble__text p:nth-child(1){ grid-column: 1; }
+.bubble__text p:nth-child(2){ grid-column: 2; }
+
+/* Lo demás baja en la columna izquierda para parecerse a tu composición */
+.bubble__text p:nth-child(3){ grid-column: 1; }
+.bubble__text p:nth-child(4){ grid-column: 1; }
+
+/* ✅ Móvil: burbuja más abajo y centrada, y permite ver todo */
+@media (max-width: 900px){
+  body{
+    background-position: center bottom;
+    background-size: cover; /* en móvil puede verse mejor así */
+  }
+
+  .bubble{
+    left: 50%;
+    right: auto;
+    top: 8%;
+    transform: translateX(-50%);
+    width: 90vw;
+  }
+
+  .bubble__text{
+    grid-template-columns: 1fr;
+  }
+
+  .script{
+    justify-self: start;
+  }
+
+  .enter{
+    top: 70%;
+  }
+}
