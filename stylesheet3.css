@@ -16,10 +16,14 @@ body{
     overflow:hidden;
 }
 
+a{
+    text-decoration:none;
+}
+
 /* GRID GENERAL DE LA PÁGINA */
 .page{
     display:grid;
-    grid-template-rows:auto 1fr;
+    grid-template-rows:auto 1fr auto;
     height:100vh;
     width:100%;
 }
@@ -28,19 +32,19 @@ body{
 .studio{
     font-family:"Old English Text MT", "UnifrakturMaguntia", Georgia, serif;
     background-color:#2d2f3c;
-    padding:1.2rem 2rem 0.8rem;
+    padding:1.2rem 1rem 0.8rem;
     color:#E3E4DB;
     z-index:2;
 }
 
-.studio h2{
-    font-size:2rem;
-    margin-bottom:0.35rem;
+.studio h1{
+    font-size:2.8rem;
+    margin-bottom:0.2rem;
 }
 
-.studio p{
-    font-size:1rem;
-    opacity:0.95;
+.studio h3{
+    font-size:1.2rem;
+    font-weight:400;
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -59,15 +63,15 @@ body{
     grid-template-rows:1fr auto;
     justify-items:center;
     align-items:center;
-    padding:1rem 2.5rem 2rem;
+    padding:1rem 2.5rem 1rem;
     min-height:0;
 }
 
 /* DRAGÓN */
 .dragon{
     width:min(58vw, 850px);
-    max-width:100%;
-    max-height:68vh;
+    max-width:75%;
+    max-height:60vh;
     object-fit:contain;
     display:block;
 }
@@ -75,9 +79,9 @@ body{
 /* BOTÓN / NOMBRE */
 .name-link{
     display:block;
-    width:min(25vw, 500px); /* más pequeño */
-    margin-top:1.2rem;
-    padding-bottom: 1rem;
+    width:min(25vw, 500px);
+    margin-top:0.8rem;
+    padding-bottom:0.5rem;
 }
 
 .name{
@@ -175,6 +179,32 @@ body{
     transform:translateY(-2px) scale(0.98);
 }
 
+/* FOOTER */
+.footer{
+    background-color:#2d2f3c;
+    padding:0.8rem 2rem 1rem;
+}
+
+.contact-link-wrapper{
+    margin-bottom:0.2rem;
+}
+
+.contact-link{
+    color:#E3E4DB;
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+.contact-link:hover{
+    color:#48e7d2;
+}
+
+.credit{
+    color:#48e7d2;
+    font-size:0.95rem;
+    font-weight:600;
+}
+
 /* RESPONSIVE */
 @media (max-width:900px){
     body{
@@ -216,5 +246,9 @@ body{
 
     .item{
         width:min(28vw, 150px);
+    }
+
+    .footer{
+        text-align:center;
     }
 }
